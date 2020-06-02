@@ -1,0 +1,117 @@
+*{
+   margin: 0;
+   padding: 0;
+   outline: 0;
+   box-sizing: border-box;
+   font-weight: normal;
+   list-style: none;
+}
+
+:root{
+font-size: 1.2vw;
+--color-branco: #FFFFFF;
+--color-primaria:  #6966FF;
+--color-secundaria:  #2400FE;
+}
+
+html, body{
+   width: 100%;
+   height: 100%;
+   font-family: Arial, Helvetica, sans-serif;
+   color: var(--color-primaria);
+}
+
+/* header */
+header{
+   height: 7rem;
+   height: 20%;
+   background-color: var(--color-primaria);
+   background: linear-gradient(91.27deg,  #2400FE 1.98%, #6966FF 77.88%);
+   display: flex;
+   justify-content: center;
+   align-items:flex-end;
+}
+
+header h1{
+   font-size: 1.333rem;
+   color: var(--color-branco);
+   text-transform: uppercase;
+   letter-spacing: 0.08rem;
+   margin-bottom: 1rem;
+}
+
+/* main */
+
+main{
+   width: 70%;
+   height: 100%;
+   margin: 0 auto;
+   padding-top: 3rem;
+}
+
+
+/* main * formulario */
+main .formulario{
+   margin-bottom: 3rem;
+}
+
+main .formulario input{
+   display: block;
+   background: transparent;
+   border: 0;
+   border-bottom: 1px solid var(--color-primaria);
+   width: 100%;
+   font-size: 1rem;
+   padding: .5rem 0;
+   margin-bottom: 1rem;
+}
+
+
+main .formulario button{
+   background-color: var(--color-primaria);
+   font-size: 1rem;
+   color: var(--color-branco);
+   line-height: 1rem;
+   padding: .5rem 1.5rem;
+   color: var(--color-branco);
+   border: none;
+   border-radius: 1rem;
+   text-transform: uppercase;
+   letter-spacing: 0.08rem;
+   transition: background .3s;
+}
+
+main .formulario button:hover{
+ transition: background .3s;
+ background-color: var(--color-secundaria);
+ cursor: pointer;
+}
+
+
+
+/* main * lista */
+
+
+
+
+main .lista ul li{
+   border: 1px solid var(--color-primaria);
+   padding: .75rem;
+   margin-bottom: 1rem;
+}
+
+main .lista ul li{
+   display: grid;
+   grid-template-columns: 90% 10%;
+}
+
+main .lista ul li .btn-remover{
+ text-align: right;
+ cursor: pointer;
+ transition: color .3s;
+}
+
+main .lista ul li .btn-remover:hover{
+   color: var(--color-secundaria);
+   transition: color .3s;
+  }

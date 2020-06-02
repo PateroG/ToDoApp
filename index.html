@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- header * start-->
+    <header>
+
+        <h1>To Do App</h1>
+
+    </header>
+    <!-- header * end-->
+
+
+<!-- main * start-->
+    <main>
+
+        <div class="formulario">
+            <input placeholder="Tarefa..."/>
+            <button>Adicionar</button>
+        </div>
+        <div class="lista">
+            <ul>
+              
+            </ul>
+        </div>
+
+    </main>
+    
+    <script>
+        var lista = document.querySelector("ul");
+        var button = document.querySelector("button");
+        var input = document.querySelector("input");
+
+        var items = []
+
+        function mostrarItems() {
+            lista.innerHTML = "";
+            for (item of items) {
+                var itemLi = document.createElement("li");
+                var itemDivTexto = document.createElement("div");
+                itemDivTexto.setAttribute("class", "item-texto");
+                var itemTexto = document.createTextNode(item);
+                itemLi.appendChild(itemDivTexto);
+                itemDivTexto.appendChild(itemTexto);
+                lista.appendChild(itemLi);
+
+                var removerElemento = document.createElement("div");
+                removerElemento.setAttribute("class", "btn-remover");
+                var removerTexto = document.createTextNode("☓");
+                itemLi.appendChild(removerElemento);
+                removerElemento.appendChild(removerTexto);
+
+                var itemPosicao = items.indexOf(item);
+                removerElemento.setAttribute("onclick", "removerItem(" + itemPosicao + ")");
+            }
+        }
+
+        mostrarItems();
+
+        function adicionarItem() {
+            var itemTexto = input.value;
+            items.push(itemTexto);
+            mostrarItems();
+            input.value = "";
+        }
+
+
+
+        button.onclick = adicionarItem;
+
+       
+        function removerItem(itemPosicao) {
+            items.splice(itemPosicao, 1);
+            mostrarItems();
+
+        }
+    </script>
+    <!-- main * end-->
+
+
+ <!-- footer * start-->
+    <footer>
+        2020 tesp
+    </footer>
+<!-- footer * start-->
+
+    </body>
+
+    
+</body>
+</html>
